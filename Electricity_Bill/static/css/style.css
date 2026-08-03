@@ -1,0 +1,202 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #eef2f7;
+}
+
+.page {
+  width: 100%;
+}
+
+
+.header {
+  background: #0a5ea8;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+}
+
+.header h1 {
+  font-size: 34px;
+}
+
+
+.card {
+  background: #fff;
+  width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
+
+.search-card {
+  width: 420px;
+}
+
+
+.page-title {
+  text-align: center;
+  color: #0a5ea8;
+  margin-bottom: 25px;
+}
+
+.section-title {
+  background: #0a5ea8;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0 10px;
+  font-size: 18px;
+}
+
+
+
+.details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.details-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.details-table td:first-child {
+  width: 35%;
+  background: #eef5ff;
+  font-weight: bold;
+}
+
+.details-table tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0a5ea8;
+}
+
+
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 16px;
+  background: #0a5ea8;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #084c88;
+}
+
+.btn-download {
+  width: auto;
+  padding: 12px 30px;
+  background: #198754;
+}
+
+.btn-download:hover {
+  background: #157347;
+}
+
+.button-area {
+  text-align: center;
+  margin-top: 25px;
+}
+
+
+
+.total-row {
+  background: #fff7d6;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+@page {
+  size: A4;
+  margin: 8mm;
+}
+
+@media print {
+
+  body {
+    background: #fff;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    box-shadow: none;
+    border: none;
+  }
+
+  .header {
+    padding: 12px;
+    box-shadow: none;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .details-table td {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .section-title {
+    padding: 8px;
+    margin-top: 10px;
+  }
+
+  .button-area {
+    display: none;
+  }
+
+    /* Remove any subtitle inside header */
+    .header p,
+    .header span,
+    .header small {
+      display: none !important;
+    }
+
+
+}

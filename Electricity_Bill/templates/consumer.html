@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Details</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="page">
+
+   <div class="header">
+    <h1>⚡ Electricity Distribution Company</h1>
+</div>
+
+    <div class="card">
+
+        <h2 class="page-title">
+            Consumer Details
+        </h2>
+
+        <table class="details-table">
+
+            <tr>
+                <td>Consumer Number</td>
+                <td>{{ consumer.consumer_no }}</td>
+            </tr>
+
+            <tr>
+                <td>Consumer Name</td>
+                <td>{{ consumer.consumer_name }}</td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td>{{ consumer.address }}</td>
+            </tr>
+
+            <tr>
+                <td>Mobile Number</td>
+                <td>{{ consumer.mobile }}</td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>{{ consumer.email }}</td>
+            </tr>
+
+            <tr>
+                <td>Division</td>
+                <td>{{ consumer.division }}</td>
+            </tr>
+
+            <tr>
+                <td>Meter Number</td>
+                <td>{{ consumer.meter_no }}</td>
+            </tr>
+
+            <tr>
+                <td>Connection Date</td>
+                <td>{{ consumer.connection_date }}</td>
+            </tr>
+
+            <tr>
+                <td>Sanctioned Load</td>
+                <td>{{ consumer.sanctioned_load }} KW</td>
+            </tr>
+
+        </table>
+
+        <div class="section-title">
+            Generate Electricity Bill
+        </div>
+
+        <form action="/generate_bill" method="POST">
+
+            <input
+                type="hidden"
+                name="consumer_no"
+                value="{{ consumer.consumer_no }}">
+
+            <div class="form-group">
+
+                <label for="units">
+                    Units Consumed
+                </label>
+
+                <input
+                    class="form-input"
+                    type="number"
+                    id="units"
+                    name="units"
+                    min="0"
+                    placeholder="Enter Units Consumed"
+                    required>
+
+            </div>
+
+            <button class="btn" type="submit">
+                Generate Bill
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

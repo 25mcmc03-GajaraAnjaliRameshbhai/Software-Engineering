@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill</title>
+
+    {% if pdf_mode %}
+    <link rel="stylesheet" href="file:///D:/anjal/Documents/SEM3DOC/Electricity_Bill/static/css/style.css">
+    {% else %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endif %}
+
+</head>
+<body>
+
+<div class="page">
+
+   <div class="header">
+    <h1>⚡ Electricity Distribution Company</h1>
+</div>
+
+    <div class="card">
+
+        <h2 class="page-title">
+            Electricity Bill
+        </h2>
+
+        <div class="section-title">
+            Bill Information
+        </div>
+
+        <table class="details-table">
+
+            <tr>
+                <td>Bill Number</td>
+                <td>{{ bill.bill_no }}</td>
+            </tr>
+
+            <tr>
+                <td>Bill Month</td>
+                <td>{{ bill.bill_month }}</td>
+            </tr>
+
+            <tr>
+                <td>Bill Date</td>
+                <td>{{ bill.bill_date }}</td>
+            </tr>
+
+            <tr>
+                <td>Due Date</td>
+                <td>{{ bill.due_date }}</td>
+            </tr>
+
+        </table>
+
+        <div class="section-title">
+            Consumer Details
+        </div>
+
+        <table class="details-table">
+
+            <tr>
+                <td>Consumer Number</td>
+                <td>{{ bill.consumer_no }}</td>
+            </tr>
+
+            <tr>
+                <td>Consumer Name</td>
+                <td>{{ bill.consumer_name }}</td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td>{{ bill.address }}</td>
+            </tr>
+
+            <tr>
+                <td>Mobile Number</td>
+                <td>{{ bill.mobile }}</td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>{{ bill.email }}</td>
+            </tr>
+
+            <tr>
+                <td>Division</td>
+                <td>{{ bill.division }}</td>
+            </tr>
+
+            <tr>
+                <td>Meter Number</td>
+                <td>{{ bill.meter_no }}</td>
+            </tr>
+
+            <tr>
+                <td>Connection Date</td>
+                <td>{{ bill.connection_date }}</td>
+            </tr>
+
+            <tr>
+                <td>Sanctioned Load</td>
+                <td>{{ bill.sanctioned_load }} KW</td>
+            </tr>
+
+        </table>
+
+        <div class="section-title">
+            Bill Details
+        </div>
+
+        <table class="details-table">
+
+            <tr>
+                <td>Units Consumed</td>
+                <td>{{ bill.units }}</td>
+            </tr>
+
+            <tr>
+                <td>Current Bill</td>
+                <td>₹{{ "%.2f"|format(bill.current_bill) }}</td>
+            </tr>
+
+            <tr>
+                <td>Previous Due</td>
+                <td>₹{{ "%.2f"|format(bill.previous_due) }}</td>
+            </tr>
+
+            <tr class="total-row">
+                <td>Total Payable Amount</td>
+                <td>₹{{ "%.2f"|format(bill.payable_amount) }}</td>
+            </tr>
+
+        </table>
+
+        {% if not pdf_mode %}
+
+        <div class="button-area">
+
+            <a href="{{ url_for('download_pdf', bill_no=bill.bill_no) }}">
+
+                <button class="btn btn-download">
+                    Download PDF
+                </button>
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Distribution Company</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+        </head>
+       
+
+<body>
+
+<div class="page">
+
+   <div class="header">
+    <h1>⚡ Electricity Distribution Company</h1>
+</div>
+
+    <div class="card search-card">
+
+        <h2 class="page-title">
+            Search Consumer
+        </h2>
+
+        <form action="/search" method="POST">
+
+            <div class="form-group">
+
+                <label for="consumer_no">
+                    Consumer Number
+                </label>
+
+                <input
+                    class="form-input"
+                    type="text"
+                    id="consumer_no"
+                    name="consumer_no"
+                    placeholder="Enter Consumer Number"
+                    required
+                >
+
+            </div>
+
+            <button class="btn" type="submit">
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
